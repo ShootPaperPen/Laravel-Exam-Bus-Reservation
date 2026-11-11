@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\BusController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Teams\TeamInvitationController;
 use App\Http\Middleware\EnsureTeamMembership;
@@ -12,7 +13,14 @@ Route::prefix('{current_team}')
     ->group(function () {
         Route::get('dashboard', DashboardController::class)->name('dashboard');
     });
-
+        
+Route::prefix('admin')
+    ->middleware(['auth'])
+    ->group(function() {
+        Route::get('manage-bus', [BusController::class, 'index'])->name('admin.manage-bus.index');
+        Route::post('manage-bus', [BusController::class, 'store'])->name('admin.manage-bus.store');
+    });
+    
 Route::middleware(['auth'])->group(function () {
     Route::post('invitations/{invitation}/accept', [TeamInvitationController::class, 'accept'])->name('invitations.accept');
     Route::delete('invitations/{invitation}', [TeamInvitationController::class, 'decline'])->name('invitations.decline');
