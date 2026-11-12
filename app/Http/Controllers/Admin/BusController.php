@@ -10,9 +10,12 @@ use Inertia\Inertia;
 class BusController extends Controller
 { 
     function index() {
+
+        $allBuses = Bus::get();
+
         return Inertia::render(
             "admin/bus",
-            ["meow" => "index"]
+            ["buses" => $allBuses]
         );
     }
 
@@ -27,8 +30,6 @@ class BusController extends Controller
             'departure_time' => ["required"],
             'arrival_time' => ["required"]
         ]);
-
-        // dd($newBus);
 
         Bus::create($newBus);
 

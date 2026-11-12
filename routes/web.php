@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\BusController;
+use App\Http\Controllers\Admin\RouteController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Teams\TeamInvitationController;
 use App\Http\Middleware\EnsureTeamMembership;
@@ -19,6 +20,9 @@ Route::prefix('admin')
     ->group(function() {
         Route::get('manage-bus', [BusController::class, 'index'])->name('admin.manage-bus.index');
         Route::post('manage-bus', [BusController::class, 'store'])->name('admin.manage-bus.store');
+
+        Route::get('manage-route', [RouteController::class, 'index'])->name('admin.manage-route.index');
+        Route::post('manage-route', [RouteController::class, 'store'])->name('admin.manage-route.store');
     });
     
 Route::middleware(['auth'])->group(function () {

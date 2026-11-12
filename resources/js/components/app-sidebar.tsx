@@ -29,6 +29,22 @@ export function AppSidebar() {
             href: dashboardUrl,
             icon: LayoutGrid,
         },
+        {
+            title: 'Manage Buses',
+            href: '/admin/manage-bus',
+        },
+        {
+            title: 'Manage Routes',
+            href: '/admin/manage-route',
+        },
+        {
+            title: 'Manage Schedules',
+            href: '/admin/manage-schedules',
+        },
+        {
+            title: 'Manage Reservations',
+            href: '/admin/manage-reservations',
+        },
     ];
 
     const footerNavItems: NavItem[] = [

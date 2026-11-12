@@ -10,3 +10,14 @@ export function cn(...inputs: ClassValue[]) {
 export function toUrl(url: NonNullable<InertiaLinkProps['href']>): string {
     return typeof url === 'string' ? url : url.url;
 }
+
+export function dateTimeToString(dateValue: Date) {
+    let dateTime = new Date(dateValue);
+
+    let dateTimeString = Intl.DateTimeFormat("en-US", {
+        dateStyle: "medium",
+        timeStyle: "short"
+    }).format(dateTime);
+
+    return dateTimeString;
+}
