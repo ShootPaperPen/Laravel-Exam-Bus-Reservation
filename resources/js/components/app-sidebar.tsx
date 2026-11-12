@@ -31,11 +31,11 @@ export function AppSidebar() {
         },
         {
             title: 'Manage Buses',
-            href: '/admin/manage-bus',
+            href: '/admin/manage-buses',
         },
         {
             title: 'Manage Routes',
-            href: '/admin/manage-route',
+            href: '/admin/manage-routes',
         },
         {
             title: 'Manage Schedules',

@@ -74,7 +74,10 @@ export default function Bus({buses}: Props) {
                     <thead>
                         <tr>
                             <td>
-                                Route Name
+                                Bus Number
+                            </td>
+                            <td>
+                                Seating Capacity
                             </td>
                             <td>
                                 Departure Location
@@ -83,10 +86,10 @@ export default function Bus({buses}: Props) {
                                 Destination
                             </td>
                             <td>
-                                Distance
+                                Departure Time
                             </td>
                             <td>
-                                Duration
+                                Arrival Time
                             </td>
                         </tr>
                     </thead>
@@ -99,7 +102,7 @@ export default function Bus({buses}: Props) {
                                     <td>{buses.departure_location}</td>
                                     <td>{buses.destination}</td>
                                     <td>{dateTimeToString(buses.departure_time)}</td>
-                                    <td>{dateTimeToString(buses.departure_time)}</td>
+                                    <td>{dateTimeToString(buses.arrival_time)}</td>
                                 </tr>
                             )
                         }) }

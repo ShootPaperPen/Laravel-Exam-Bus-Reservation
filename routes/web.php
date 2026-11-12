@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\BusController;
 use App\Http\Controllers\Admin\RouteController;
+use App\Http\Controllers\Admin\ScheduleController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Teams\TeamInvitationController;
 use App\Http\Middleware\EnsureTeamMembership;
@@ -18,11 +19,14 @@ Route::prefix('{current_team}')
 Route::prefix('admin')
     ->middleware(['auth'])
     ->group(function() {
-        Route::get('manage-bus', [BusController::class, 'index'])->name('admin.manage-bus.index');
-        Route::post('manage-bus', [BusController::class, 'store'])->name('admin.manage-bus.store');
+        Route::get('manage-buses', [BusController::class, 'index'])->name('admin.manage-buses.index');
+        Route::post('manage-buses', [BusController::class, 'store'])->name('admin.manage-buses.store');
 
-        Route::get('manage-route', [RouteController::class, 'index'])->name('admin.manage-route.index');
-        Route::post('manage-route', [RouteController::class, 'store'])->name('admin.manage-route.store');
+        Route::get('manage-routes', [RouteController::class, 'index'])->name('admin.manage-routes.index');
+        Route::post('manage-routes', [RouteController::class, 'store'])->name('admin.manage-routes.store');
+        
+        Route::get('manage-schedules', [ScheduleController::class, 'index'])->name('admin.manage-routes.index');
+        Route::post('manage-schedules', [ScheduleController::class, 'store'])->name('admin.manage-routes.store');
     });
     
 Route::middleware(['auth'])->group(function () {
