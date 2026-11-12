@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\BusController;
+use App\Http\Controllers\Admin\ReservationController;
 use App\Http\Controllers\Admin\RouteController;
 use App\Http\Controllers\Admin\ScheduleController;
 use App\Http\Controllers\DashboardController;
@@ -27,6 +28,9 @@ Route::prefix('admin')
         
         Route::get('manage-schedules', [ScheduleController::class, 'index'])->name('admin.manage-routes.index');
         Route::post('manage-schedules', [ScheduleController::class, 'store'])->name('admin.manage-routes.store');
+        
+        Route::get('manage-reservations', [ReservationController::class, 'index'])->name('admin.manage-reservations.index');
+        Route::post('manage-reservations', [ReservationController::class, 'store'])->name('admin.manage-reservations.store');
     });
     
 Route::middleware(['auth'])->group(function () {

@@ -23,9 +23,7 @@ export function dateTimeToString(dateTimeValue: Date) {
 }
 
 export function dateToString(dateValue: Date) {
-    console.log(dateValue)
     let date = new Date(dateValue);
-    console.log(date)
     
     let dateString = Intl.DateTimeFormat("en-US", {
         dateStyle: "medium"
@@ -35,13 +33,5 @@ export function dateToString(dateValue: Date) {
 }
 
 export function timeToString(timeValue: Date) {
-    // let time = new Date(timeValue);
-    // console.log(timeValue);
-
-    // let timeString = Intl.DateTimeFormat("en-US", {
-    //     timeStyle: "short"
-    // }).format(timeValue);
-
-    // return timeString;
     return timeValue.toString();
 }

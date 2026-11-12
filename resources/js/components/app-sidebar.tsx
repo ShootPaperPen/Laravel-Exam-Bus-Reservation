@@ -37,7 +37,7 @@ export function AppSidebar() {
             title: 'Manage Routes',
             href: '/admin/manage-routes',
         },
-        {
+        {   
             title: 'Manage Schedules',
             href: '/admin/manage-schedules',
         },
